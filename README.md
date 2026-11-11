@@ -7,6 +7,7 @@ MCP-сервер для Trello: доски, списки, карточки, че
 ```
 npm install && npm run build
 claude mcp add --scope user trello -- node /абсолютный/путь/к/build/index.js
+# или без клонирования: claude mcp add --scope user trello -- npx -y github:kholodniakruslan/trello-mcp
 ```
 
 ## Шаг 0. API-ключ (один раз, вручную)
@@ -117,17 +118,19 @@ Trello выдаёт ключ только владельцу аккаунта, �
 `remove_member_from_board`) помечены `destructive`. `invite_member` отправляет приглашение на email: вызывайте его
 только по явной просьбе. При лимите Trello (HTTP 429) запрос повторяется до 3 раз, таймаут запроса 30 секунд.
 
-## Запуск через npx
+## Установка и запуск через npx
 
-Пакет готов к публикации (`npm pack` проверен: ставится в чистую папку и запускается). Имя в `package.json`:
-`claude-trello-mcp-server`; перед `npm publish` проверьте, что оно свободно (`npm view <имя>`), и войдите в npm (`npm login`).
-После публикации:
+Прямо из GitHub, без аккаунта npm (сборка выполняется при установке):
 
 ```
-claude mcp add --scope user trello -- npx -y claude-trello-mcp-server
+claude mcp add --scope user trello -- npx -y github:kholodniakruslan/trello-mcp
 ```
 
-Без публикации: `npm pack`, затем `npx -y ./claude-trello-mcp-server-1.2.0.tgz` или путь к `build/index.js`, как выше.
+Из локальной копии: `npm install && npm run build`, затем
+`claude mcp add --scope user trello -- node /абсолютный/путь/build/index.js`.
+
+Пакет для реестра npm (`claude-trello-mcp-server`) собирается и проверяется командой `npm pack`; для публикации
+(`npm publish --access public`) в аккаунте npm должна быть включена двухфакторная аутентификация.
 
 ## Самопроверка
 

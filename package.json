@@ -1,0 +1,39 @@
+{
+  "name": "claude-trello-mcp-server",
+  "version": "1.3.0",
+  "description": "MCP server for Trello: boards, lists, cards, checklists, labels, custom fields, search. Browser or manual authorization.",
+  "scripts": {
+    "build": "tsc && chmod +x build/index.js",
+    "start": "node build/index.js",
+    "test": "npm run build && node scripts/i18ntest.mjs && node scripts/selftest.mjs",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "trello",
+    "model-context-protocol",
+    "claude"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "typescript": "^7.0.2"
+  },
+  "type": "module",
+  "bin": {
+    "trello-mcp": "build/index.js"
+  },
+  "files": [
+    "build",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  }
+}

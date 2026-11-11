@@ -14,7 +14,7 @@
     "model-context-protocol",
     "claude"
   ],
-  "author": "",
+  "author": "Ruslan",
   "license": "MIT",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.32.2",
@@ -35,5 +35,13 @@
   ],
   "engines": {
     "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kholodniakruslan/trello-mcp.git"
+  },
+  "homepage": "https://github.com/kholodniakruslan/trello-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/kholodniakruslan/trello-mcp/issues"
   }
 }
